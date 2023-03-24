@@ -34,5 +34,7 @@ class Currency {
 }
 
 
-const dollar = new Currency('$', 'Dollars');
-console.log(dollar.displayFullCurrency());
+// const dollar = new Currency('$', 'Dollars');
+// console.log(dollar.displayFullCurrency());
+
+module.exports = Currency;
