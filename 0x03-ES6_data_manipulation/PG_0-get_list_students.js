@@ -7,6 +7,7 @@ function getListStudents() {
 	]
 }
 
-console.log(getListStudents());
+// console.log(getListStudents());
+// console.log(getListStudents().map(i => i.id));
 
 module.exports = getListStudents;
