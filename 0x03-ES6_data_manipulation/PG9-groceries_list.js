@@ -10,4 +10,5 @@ function groceriesList() {
 	return groceries;
 }
 
-console.log(groceriesList());
+// console.log(groceriesList());
+module.exports = groceriesList;
