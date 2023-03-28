@@ -1,4 +1,4 @@
-const getListStudents = require('./PG_0-get_list_students.js');
+const getListStudents = require('./0-get_list_students.js');
 
 function getListStudentIds(arr) {
 	if (Array.isArray(arr)){

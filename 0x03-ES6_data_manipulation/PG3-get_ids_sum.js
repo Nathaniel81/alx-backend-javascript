@@ -1,4 +1,4 @@
-const getListStudents = require('./PG_0-get_list_students')
+const getListStudents = require('./0-get_list_students')
 
 function getStudentIdsSum(o) {
 	const ids = o.map(i => i.id)

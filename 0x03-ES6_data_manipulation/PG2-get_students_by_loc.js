@@ -1,4 +1,4 @@
-const getListStudents = require('./PG_0-get_list_students')
+const getListStudents = require('./0-get_list_students')
 
 function getStudentsByLocation(listOfStd, city) {
 	// const filteredArray = listOfStd.filter((o) => {
