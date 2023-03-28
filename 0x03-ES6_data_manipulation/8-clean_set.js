@@ -1,15 +1,21 @@
 export default function cleanSet(set, startString) {
-  if (startString === '') {
+  if (
+    !set
+    || !startString
+    || !(set instanceof Set)
+    || typeof startString !== 'string'
+  ) {
     return '';
   }
-  let result = '';
-  let foundValues = false;
+  const subString = [];
   // eslint-disable-next-line no-restricted-syntax
-  for (const value of set) {
-    if (value.startsWith(startString)) {
-      result += `${value.slice(startString.length)}-`;
-      foundValues = true;
+  for (const elem of set.values()) {
+    if (typeof elem === 'string' && elem.startsWith(startString)) {
+      const sub = elem.substring(startString.length);
+      if (sub) {
+        subString.push(sub);
+      }
     }
   }
-  return foundValues ? result.slice(0, -1) : '';
+  return subString.join('-');
 }
