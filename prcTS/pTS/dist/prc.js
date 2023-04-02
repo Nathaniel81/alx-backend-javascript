@@ -3,13 +3,13 @@ var student1 = {
     firstName: "Bekele",
     lastName: "Chala",
     age: 12,
-    location: "Shebedino"
+    location: "Dukem"
 };
 var student2 = {
     firstName: "Bekelech",
     lastName: "Chane",
     age: 12,
-    location: "Shola"
+    location: "Sululta"
 };
 var studentList = [student1, student2];
 var table = document.createElement('table');
