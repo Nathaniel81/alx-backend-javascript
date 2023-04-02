@@ -45,17 +45,25 @@ interface IStudentClass {
 	displayName(): string
 }
 
+interface IStudentClassConstructor {
+	new (firstName: string, lastName: string): IStudentClass;
+}
+
 class StudentClass implements IStudentClass {
-	public firstName: string;
-	public lastName: string;
+	private readonly firstName: string;
+	private readonly lastName: string;
 	constructor(student: IStudent) {
-		this.firstName = student.firstName;
+		this.firstName = student.firstName;	
 		this.lastName = student.lastName;
 	}
-	workOnHomework() {
+	public workOnHomework() {
 		return 'Currently working';
 	}
-	displayName() {
+	public displayName() {
 		return `${this.firstName}`;
 	}
+}
+
+function createStudent(con: IStudentClassConstructor, firstName: string, lastName: string) {
+	return new con(firstName, lastName);
 }
