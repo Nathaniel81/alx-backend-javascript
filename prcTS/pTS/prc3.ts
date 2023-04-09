@@ -42,3 +42,18 @@ function createEmployee(salary: number | string): Director | Teacher {
 	}
 	return new Director();
 }
+
+function isDirector(employee: Teacher | Director): boolean {
+	return employee instanceof Director;
+}
+
+function executeWork(employee: Teacher | Director) {// Only access properties or methods that are common to both types
+	// This is because the function can accept objects of either type, and TypeScript only allows you to access properties or methods that are guaranteed to be present on all possible types in the union
+
+	//Telling TypeScript to treat the employee object as if it is an instance of Director or Teacher, respectively, regardless of the declared union type (Teacher | Director).
+	if (isDirector(employee)) {
+		return (employee as Director).workDirectorTasks();
+	} else {
+		return (employee as Teacher).workTeacherTasks();
+	}
+}
